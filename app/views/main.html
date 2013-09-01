@@ -1,9 +1,68 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div class="col-lg-12">
+  <h1>Simple HTML5 Form</h1>
+  <form id="simpleForm" name="simpleForm">
+    <div class="form-group">
+      <label class="control-label" for="text">Text</label>
+      <input type="text" class="form-control" id="text" name="text" data-ng-model="simple.text" placeholder="Good Ol' Plain Text">
+    </div>
+    <div class="form-group" data-ng-class="simpleForm.email.$dirty && simpleForm.email.$invalid && 'has-error'">
+      <label class="control-label" for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" data-ng-model="simple.email" placeholder="Email Address">
+      <p class="help-block" ng-show="simpleForm.email.$dirty && simpleForm.email.$invalid">Whoops, that doesn't look like an email address!</p>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" data-ng-model="simple.password" placeholder="Super Duper Secret">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="tel">Telephone</label>
+      <input type="tel" class="form-control" id="tel" name="tel" data-ng-model="simple.tel" placeholder="Lemme Get Dem Digits">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="url">URL</label>
+      <input type="url" class="form-control" id="url" name="url" data-ng-model="simple.url" placeholder="Well-formed but not necessarily extant">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="textarea">Text Area</label>
+      <textarea class="form-control" id="textarea" name="textarea" data-ng-model="simple.textarea" placeholder="Feel free to go on at length."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="select">Select</label>
+      <select class="form-control" id="select" name="select" data-ng-model="simple.select">
+        <optgroup label="USA">
+          <option val="-0500">EST</option>
+          <option val="-0600">CST</option>
+          <option val="-0700">MST</option>
+          <option val="-0800">PST</option>
+        </optgroup>
+        <optgroup label="Virtual">
+          <option val="-0200">VRT</option>
+          <option val="+0000">EVE</option>
+          <option val="-0700">SLT</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="multiselect">Multiple Select</label>
+      <select multiple class="form-control" id="multiselect" name="multiselect" data-ng-model="simple.multiselect">
+        <optgroup label="User">
+          <option val="100000000">Read</option>
+          <option val="010000000">Write</option>
+          <option val="001000000">Execute</option>
+        </optgroup>
+        <optgroup label="Group">
+          <option val="000100000">Read</option>
+          <option val="000010000">Write</option>
+          <option val="000001000">Execute</option>
+        </optgroup>
+        <optgroup label="World">
+          <option val="000000100">Read</option>
+          <option val="000000010">Write</option>
+          <option val="000000001">Execute</option>
+        </optgroup>
+      </select>
+    </div>
+  </form>
+  <h2>Form Data</h2>
+  <pre>{{simple}}</pre>
 </div>
