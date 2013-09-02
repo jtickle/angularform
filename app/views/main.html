@@ -5,10 +5,10 @@
       <label class="control-label" for="text">Text</label>
       <input type="text" class="form-control" id="text" name="text" data-ng-model="simple.text" placeholder="Good Ol' Plain Text">
     </div>
-    <div class="form-group" data-ng-class="simpleForm.email.$dirty && simpleForm.email.$invalid && 'has-error'">
+    <div class="form-group">
       <label class="control-label" for="email">Email</label>
       <input type="email" class="form-control" id="email" name="email" data-ng-model="simple.email" placeholder="Email Address">
-      <p class="help-block" ng-show="simpleForm.email.$dirty && simpleForm.email.$invalid">Whoops, that doesn't look like an email address!</p>
+      <p class="help-block" ng-show="simpleForm.email.$erroneous">Whoops, that doesn't look like an email address!</p>
     </div>
     <div class="form-group">
       <label class="control-label" for="password">Password</label>
@@ -21,6 +21,7 @@
     <div class="form-group">
       <label class="control-label" for="url">URL</label>
       <input type="url" class="form-control" id="url" name="url" data-ng-model="simple.url" placeholder="Well-formed but not necessarily extant">
+      <input type="url" class="form-control" id="url2" name="url2" data-ng-model="simple.url2" placeholder="Another URL to test out multiple children of form-group">
     </div>
     <div class="form-group">
       <label class="control-label" for="textarea">Text Area</label>
@@ -30,15 +31,15 @@
       <label class="control-label" for="select">Select</label>
       <select class="form-control" id="select" name="select" data-ng-model="simple.select">
         <optgroup label="USA">
-          <option val="-0500">EST</option>
-          <option val="-0600">CST</option>
-          <option val="-0700">MST</option>
-          <option val="-0800">PST</option>
+          <option value="-0500">EST</option>
+          <option value="-0600">CST</option>
+          <option value="-0700">MST</option>
+          <option value="-0800">PST</option>
         </optgroup>
         <optgroup label="Virtual">
-          <option val="-0200">VRT</option>
-          <option val="+0000">EVE</option>
-          <option val="-0700">SLT</option>
+          <option value="-0200">VRT</option>
+          <option value="+0000">EVE</option>
+          <option value="-0700">SLT</option>
         </optgroup>
       </select>
     </div>
@@ -46,23 +47,25 @@
       <label class="control-label" for="multiselect">Multiple Select</label>
       <select multiple class="form-control" id="multiselect" name="multiselect" data-ng-model="simple.multiselect">
         <optgroup label="User">
-          <option val="100000000">Read</option>
-          <option val="010000000">Write</option>
-          <option val="001000000">Execute</option>
+          <option value="100000000">Read</option>
+          <option value="010000000">Write</option>
+          <option value="001000000">Execute</option>
         </optgroup>
         <optgroup label="Group">
-          <option val="000100000">Read</option>
-          <option val="000010000">Write</option>
-          <option val="000001000">Execute</option>
+          <option value="000100000">Read</option>
+          <option value="000010000">Write</option>
+          <option value="000001000">Execute</option>
         </optgroup>
         <optgroup label="World">
-          <option val="000000100">Read</option>
-          <option val="000000010">Write</option>
-          <option val="000000001">Execute</option>
+          <option value="000000100">Read</option>
+          <option value="000000010">Write</option>
+          <option value="000000001">Execute</option>
         </optgroup>
       </select>
     </div>
   </form>
   <h2>Form Data</h2>
   <pre>{{simple}}</pre>
+  <h2>Errors</h2>
+  <pre>{{simpleForm.$error}}</pre>
 </div>
