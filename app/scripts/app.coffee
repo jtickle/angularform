@@ -6,6 +6,9 @@ angular.module('angularformApp', [])
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
+      .when '/simple',
+        templateUrl: 'views/simple.html'
+        controller: 'SimpleFormCtrl'
       .otherwise
         redirectTo: '/'
   ]

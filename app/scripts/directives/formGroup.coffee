@@ -6,17 +6,28 @@ angular.module('angularformApp')
     link: (scope, element, attrs) ->
       form = $(element.parents('form')[0]).attr 'name'
 
+      isButton = ($input) ->
+        $input.attr('type') is 'submit' or $input.attr('type') is 'button' or $input.is 'button'
+
       reJiggerClass = () ->
         element.removeClass 'has-error'
         for el in element.find 'input,textarea,select'
           $input = $(el)
+          # Skip buttons because we don't care
+          if isButton $input
+            continue
+
           name = $input.attr 'name'
           inputScope = scope[form][name]
 
           if inputScope.$erroneous
             element.addClass 'has-error'
 
+        undefined
+
       setupBlur = ($input) ->
+        if isButton $input
+          return
         name = $input.attr 'name'
         inputScope = scope[form][name]
         inputScopeInvalidExpr = form + '.' + name + '.$invalid'
@@ -38,6 +49,10 @@ angular.module('angularformApp')
         scope.$watch inputScopeErroneousExpr, (erroneous) ->
           reJiggerClass()
 
+        undefined
+
 
       for el in element.find 'input,textarea,select'
         setupBlur $(el)
+
+      undefined

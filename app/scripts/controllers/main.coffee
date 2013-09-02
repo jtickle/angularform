@@ -2,5 +2,9 @@
 
 angular.module('angularformApp')
   .controller 'MainCtrl', ['$scope', ($scope) ->
-      $scope.simple = { }
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate'
+      'AngularJS'
+      'Karma'
+    ]
   ]
