@@ -9,6 +9,9 @@ angular.module('angularformApp', [])
       .when '/simple',
         templateUrl: 'views/simple.html'
         controller: 'SimpleFormCtrl'
+      .when '/validation',
+        templateUrl: 'views/validation.html'
+        controller: 'ValidationCtrl'
       .otherwise
         redirectTo: '/'
   ]

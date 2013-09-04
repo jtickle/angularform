@@ -1,0 +1,35 @@
+<div class="col-lg-12">
+  <h1>Form Validation</h1>
+  <form id="formValidation" name="formValidation">
+    <div class="form-group">
+      <label class="control-label" for="none">None</label>
+      <input type="text" class="form-control" id="none" name="none" data-ng-model="validation.none" placeholder="No Validation Performed">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="required">Required</label>
+      <input type="text" class="form-control" id="required" name="required" data-ng-model="validation.required" placeholder="This Field is R-E-Q-U-I-R-E-D" required>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="emailRequired">Email Required</label>
+      <input type="text" class="form-control" id="emailRequired" name="emailRequired" data-ng-model="validation.emailRequired" placeholder="Your email address is required." required>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="urlRequired">URL Required</label>
+      <input type="text" class="form-control" id="urlRequired" name="urlRequired" data-ng-model="validation.urlRequired" placeholder="Something what looks like a URL is required." required>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Radio Required</label>
+      <label><input type="radio" data-ng-model="validation.urlRequired" name="radioRequired" val="A"> A</label>
+      <label><input type="radio" data-ng-model="validation.urlRequired" name="radioRequired" val="B"> B</label>
+      <label><input type="radio" data-ng-model="validation.urlRequired" name="radioRequired" val="C"> C</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Checkbox Required</label>
+      <label><input type="checkbox" name="checkboxRequired" data-ng-model="validation.checkboxRequired"> I agree you can haz my soulz.</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="floatRequired">Floating Point Number Required</label>
+      <input type="text" class="form-control" id="floatRequired" name="floatRequired" data-ng-model="validation.floatRequired" placeholder="123.4567" required data-float>
+    </div>
+  </form>
+</div>
